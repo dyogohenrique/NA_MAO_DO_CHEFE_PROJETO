@@ -1,0 +1,36 @@
+.btn {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 0.7em 1.2em;
+    text-decoration: none;
+    transition: 300ms;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+    font-size: larger;
+    font-weight: bolder;
+    opacity: .8;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    opacity: 1;
+}
+
+.mid {
+    padding: .9rem 7.7rem;
+    border-radius: 40px;
+}
+
+.clean {
+    background-color: #727272;
+}
+
+.danger {
+    background-color: #c61212;
+}
+
+.neutro {
+    background-color: rgb(0, 115, 255);
+
+}

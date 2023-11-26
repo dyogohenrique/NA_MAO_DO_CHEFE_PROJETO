@@ -1,0 +1,40 @@
+a {
+  text-decoration: none;
+}
+
+.containerNavbar {
+  display: flex;
+  background-color: var(--primary-color);
+  justify-content: space-between;
+  gap: 1rem;
+}
+.containerNavbar a{
+  font-size: 1.3rem;
+}
+.navbarItem {
+  display: flex;
+  padding: 20px 25px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.navbarItemWrapper {
+  position: relative;
+}
+
+.line {
+  position: absolute;
+  left: 10%;
+  bottom: 0;
+  height: 3px;
+  width: 80%;
+  background-color: var(--tertiary-color); 
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: transform 300ms ease;
+}
+
+.navbarItemWrapper:hover .line,
+.active + .line{
+  transform: scaleX(1);
+}

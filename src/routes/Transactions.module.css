@@ -1,0 +1,37 @@
+.container {
+  width: 98vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbarContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 1.7rem;
+  width: 98%;
+}
+
+.navbarContainer .navbarItem {
+  border-bottom: 3px solid black;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.3rem;
+  width: 98%;
+}
+
+.containerContent {
+  border: 3px solid black;
+  border-top: none;
+  border-bottom: none;
+  width: 98%;
+}
+
+.navbarItem.active {
+  border: 3px solid black;
+  border-bottom: none;
+  border-top: 3px solid var(--tertiary-color);
+}

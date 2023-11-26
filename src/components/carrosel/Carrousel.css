@@ -1,0 +1,59 @@
+.slick-list {
+  padding: 30px 150px !important;
+}
+
+.carousel-container {
+  width: 90%;
+}
+
+.slick-slide > div {
+  margin: 0 15px;
+  box-sizing: border-box; /* Certifique-se de que as margens não afetam a largura total do slide */
+  
+}
+
+.carousel-card {
+  background-color: var(--secondary-color);
+  position: relative;
+  color: #fff;
+  transition: 500ms; /* Adicionei a transição aqui para suavizar as mudanças */
+  border-radius: 10px;
+}
+
+.slick-slide:not(.slick-center) {
+  filter: opacity(.9); /* Ajuste o valor do desfoque conforme necessário */
+  z-index: 1; /* Certifica-se de que a camada de blur fica sobre o conteúdo do card */
+}
+
+.cardContainer {
+  min-height: 45vh;
+  
+  padding: 10px;
+
+  text-align: center;
+  font-weight: bold;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slick-center .carousel-card {
+  transform: scale(1.1);
+  border-radius: 10px;
+  z-index: 2; /* Certifica-se de que a camada de blur fica sobre o conteúdo do card */
+  
+}
+
+.slick-arrow.slick-next:before,
+.slick-arrow.slick-prev:before {
+  content: "";
+}
+
+.slick-next {
+  right: -26px;
+}
+
+.slick-prev {
+  left: -70px;
+}

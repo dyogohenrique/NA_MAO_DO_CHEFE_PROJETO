@@ -1,0 +1,22 @@
+.radio {
+    margin-bottom: 1em;
+    font-size: larger;
+    display: flex;
+    align-items: baseline;
+}
+
+.radio>label {
+    margin-bottom: .6em;
+    font-weight: bold;
+}
+
+.container_options {
+    margin: 10px;
+}
+
+.options {
+    margin-right: 2em;
+}
+.options input {
+    margin-right: .3em;
+}

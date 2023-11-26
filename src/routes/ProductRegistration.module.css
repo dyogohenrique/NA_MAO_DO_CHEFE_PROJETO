@@ -1,0 +1,23 @@
+.container {
+  max-width: 80vw;
+  margin: 1rem auto;
+}
+
+.formContainer {
+  margin-top: 1rem;
+}
+
+.input_container {
+  display: flex;
+  margin-top: 2.4em;
+}
+
+.container1 {
+  gap: 4rem;
+}
+
+.addProduct {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+}

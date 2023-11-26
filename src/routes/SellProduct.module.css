@@ -1,0 +1,72 @@
+.container {
+  width: 80vw;
+  margin: 1rem auto;
+}
+
+.containerContent {
+  display: flex;
+
+  gap: 4rem;
+
+  margin-top: 1.5rem;
+}
+
+.form {
+  width: 60%;
+}
+
+.input_container {
+  display: flex;
+  gap: 3em;
+  margin-bottom: 2em;
+}
+
+.aviso {
+  margin-bottom: 2em;
+}
+
+.addProduct {
+    display: flex;
+    justify-content: center;
+}
+
+.cardList {
+  width: 30%;
+  height: 70vh;
+
+  background-color: #F3FFF0;
+  border: 2px solid var(--tertiary-color);
+}
+
+.cardList h2 {
+  text-align: center;
+  padding: 10px;
+  border-bottom: 2px solid #7e7e7e;
+}
+
+.products {
+  padding: 0 1rem;
+  height: 75%;
+  overflow: auto;
+  border-bottom: 2px solid #7e7e7e;
+}
+
+.products::-webkit-scrollbar-track {
+  background-color: #F4F4F4;
+}
+.products::-webkit-scrollbar {
+  width: 6px;
+  background: #F4F4F4;
+}
+.products::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #dad7d7;
+}
+
+.btnContainer {
+  margin-top: .5rem;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

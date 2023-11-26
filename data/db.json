@@ -1,0 +1,92 @@
+{
+  "products": [
+    {
+      "productName": "Arroz",
+      "amount": 70,
+      "valueTotal": 600,
+      "id": 1
+    },
+    {
+      "productName": "Feijão",
+      "amount": 90,
+      "valueTotal": 300,
+      "id": 2
+    },
+    {
+      "productName": "Trigo",
+      "dateFabrication": "2023-11-15",
+      "dateValidation": "2024-01-31",
+      "amount": 100,
+      "valueUnit": 15,
+      "valueTotal": 1750,
+      "perishable": "não",
+      "id": 3
+    },
+    {
+      "productName": "Sal",
+      "amount": 480,
+      "valueTotal": 200,
+      "id": 4
+    }
+  ],
+  "sales": [
+    {
+      "products": [
+        {
+          "productId": 4,
+          "quantity": "100"
+        }
+      ],
+      "totalValue": 1000,
+      "date": "2023-11-26",
+      "id": 1
+    }
+  ],
+  "history": [
+    {
+      "productId": 1,
+      "quantity": 100,
+      "valueUnit": 20,
+      "valueTotal": 2000,
+      "date": "2023-11-26",
+      "type": "entrada",
+      "id": 1
+    },
+    {
+      "productId": 2,
+      "quantity": 100,
+      "valueUnit": 30,
+      "valueTotal": 3000,
+      "date": "2023-11-26",
+      "type": "entrada",
+      "id": 2
+    },
+    {
+      "productId": 3,
+      "quantity": 50,
+      "valueUnit": 15,
+      "valueTotal": 750,
+      "date": "2023-11-26",
+      "type": "entrada",
+      "id": 3
+    },
+    {
+      "productId": 4,
+      "quantity": 500,
+      "valueUnit": 10,
+      "valueTotal": 5000,
+      "date": "2023-11-26",
+      "type": "entrada",
+      "id": 4
+    },
+    {
+      "productId": 3,
+      "quantity": 50,
+      "valueUnit": 20,
+      "valueTotal": 1000,
+      "date": "2023-11-26",
+      "type": "entrada",
+      "id": 5
+    }
+  ]
+}

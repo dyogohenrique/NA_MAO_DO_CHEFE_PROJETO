@@ -1,0 +1,24 @@
+.buscar {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px 30px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid #000;
+    padding: 8px;
+}
+th {
+    background-color: #78A633;
+    color: #fff;
+    text-align: center;
+}
+td {
+    background-color: #FFF;
+    padding-top: 18px;
+    text-align: center;
+}

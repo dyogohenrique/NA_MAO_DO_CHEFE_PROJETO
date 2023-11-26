@@ -1,0 +1,21 @@
+:root {
+  --primary-color: #78F279;
+  --secondary-color: #08CB2C;
+  --tertiary-color: #FFDE59;
+  
+  --column-color: #3AE95B;
+  
+  --primary-color-letters: #727272;
+  --secondary-color-letters: #fff;
+
+  background-color: #f4f4f4;
+  color: var(--primary-color-letters);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  font-family: 'Lato', sans-serif;;
+}
