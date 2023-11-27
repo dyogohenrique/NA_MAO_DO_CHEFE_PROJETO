@@ -14,11 +14,10 @@ const ConfirmationModal = ({ onConfirm, onCancel }) => {
       setShowNameWarning(true);
       return;
     }
-  
     // Chama a função onConfirm passando o nome do destinatário
     onConfirm(recipientName);
+
   };
-  
 
   return (
     <div className={style.modal}>
@@ -37,7 +36,9 @@ const ConfirmationModal = ({ onConfirm, onCancel }) => {
           }}
         />
         {showNameWarning && (
-          <p className={style.warning}>Por favor, forneça o nome do destinatário.</p>
+          <p className={style.warning}>
+            Por favor, forneça o nome do destinatário.
+          </p>
         )}
         <p>A nota fiscal vai ficar salva em relatórios/histórico*</p>
       </div>

@@ -24,7 +24,8 @@ function Input({
   handleOnChange,
   disabled,
   list,
-  step
+  step,
+  pattern
 }) {
 
   return (
@@ -45,6 +46,7 @@ function Input({
         disabled={disabled}
         list={list}
         step={step}
+        pattern={pattern}
       />
     </div>
   );

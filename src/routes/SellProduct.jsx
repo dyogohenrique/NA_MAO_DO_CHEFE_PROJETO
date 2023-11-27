@@ -47,22 +47,27 @@ const SellProduct = () => {
   }));
 
   const handleProductChange = (selectedOption) => {
-    setProductName(selectedOption.value);
+    const selectedProductName = selectedOption.value;
+    setProductName(selectedProductName);
     setErrorMessage(""); // Limpa a mensagem de erro ao escolher um novo produto
+
+    // Verifica se o produto já está na lista sellProducts
+    const existingProduct = sellProducts.find(
+      (product) => product.productName === selectedProductName
+    );
+
+    if (existingProduct) {
+      setEditingProduct(existingProduct);
+      setAmount(existingProduct.amount);
+    } else {
+      setEditingProduct(null);
+      setAmount(0);
+    }
   };
 
   const addProductToSell = () => {
     if (!productName || amount <= 0) {
       setErrorMessage("Preencha todos os campos antes de adicionar o produto.");
-      return;
-    }
-
-    const existingProduct = sellProducts.find(
-      (p) => p.productName === productName
-    );
-
-    if (existingProduct) {
-      setErrorMessage("Este produto já está na lista!");
       return;
     }
 
@@ -100,9 +105,28 @@ const SellProduct = () => {
   };
 
   const handleEdit = (product) => {
-    setEditingProduct(product);
-    setProductName(product.productName);
-    setAmount(product.amount);
+    const existingProduct = sellProducts.find(
+      (p) => p.productName.toLowerCase() === product.productName.toLowerCase()
+    );
+
+    if (existingProduct) {
+      setEditingProduct(existingProduct);
+      setProductName(existingProduct.productName);
+      setAmount(existingProduct.amount);
+    } else {
+      // Adiciona o produto à lista sellProducts ao editar, apenas se não estiver na lista
+      setSellProducts((prevSellProducts) => [
+        ...prevSellProducts,
+        {
+          productName: product.productName,
+          amount: product.amount,
+          valueTotal: product.valueTotal,
+        },
+      ]);
+      setEditingProduct(product);
+      setProductName(product.productName);
+      setAmount(product.amount);
+    }
   };
 
   const handleDelete = (productToDelete) => {
@@ -164,7 +188,7 @@ const SellProduct = () => {
         })),
         totalValue,
         date: new Date().toISOString().split("T")[0], // Data atual no formato YYYY-MM-DD
-        recipientName, // Adiciona o nome do destinatário
+        recipientName: recipientName, // Corrigindo para usar o recipientName passado como parâmetro
       };
 
       // Adicionar lógica para enviar a venda à API (por exemplo, POST para /sales)
@@ -185,12 +209,17 @@ const SellProduct = () => {
       });
 
       // Limpar a lista de vendas após a venda ser concluída
-      setShowConfirmationModal(true);
+      resetConfirmationModal();
       setSellProducts([]);
     } catch (error) {
       console.error("Erro ao vender produtos:", error);
       // Adicionar lógica de tratamento, como exibir uma mensagem de erro
     }
+  };
+
+  const resetConfirmationModal = () => {
+    setShowConfirmationModal(false);
+    setRecipientName(""); // Limpar o recipientName ao fechar o modal
   };
 
   const handleSellConfirmation = () => {
@@ -203,15 +232,18 @@ const SellProduct = () => {
       setShowConfirmationModal(true);
     }
   };
-  const handleSellConfirmed = () => {
-    setShowConfirmationModal(false);
+
+  const handleSellConfirmed = (recipientName) => {
     handleSell(recipientName);
+    console.log(recipientName)
+    resetConfirmationModal();
   };
 
   const handleSellCancelled = () => {
-    setShowConfirmationModal(false);
-    // Lógica adicional ao cancelar a venda (opcional)
+    resetConfirmationModal();
   };
+
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();

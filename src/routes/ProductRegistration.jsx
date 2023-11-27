@@ -154,7 +154,7 @@ const ProductRegistration = () => {
   const handleValueUnitChange = (e) => {
     const enteredValueUnit = e.target.value;
     setValueUnit(enteredValueUnit);
-
+  
     // Calcula o valor total e atualiza o estado
     const calculatedTotalValue = calculateTotalValue(
       parseInt(amount),
@@ -167,8 +167,17 @@ const ProductRegistration = () => {
     updateDaysToExpiration();
   }, [dateFabrication, dateValidation]);
 
+  
+
   const handleSubmit = async (e) => {
-    // e.preventDefault();
+    e.preventDefault();
+
+    if (!productName || !dateFabrication || !dateValidation || !amount || !valueUnit || !perishable) {
+      setErrorMessage("Todos os campos devem ser preenchidos.");
+      return;
+    }
+
+    const numericValueUnit = parseFloat(valueUnit.replace("R$ ", "").replace(",", "."));
 
     const existingProduct = products.find(
       (product) => product.productName === productName
@@ -188,7 +197,7 @@ const ProductRegistration = () => {
       const historyEntry = {
         productId: existingProduct.id,
         quantity: parseInt(amount),
-        valueUnit: parseFloat(valueUnit),
+        valueUnit: numericValueUnit,
         valueTotal: parseFloat(valueTotal),
         date: new Date().toISOString().split("T")[0],
         type: "entrada", // Este é um novo produto, então é uma entrada no histórico
@@ -213,7 +222,7 @@ const ProductRegistration = () => {
       const historyEntry = {
         productId: products.length + 1, // Use uma lógica adequada para atribuir IDs
         quantity: parseInt(amount),
-        valueUnit: parseFloat(valueUnit),
+        valueUnit: numericValueUnit,
         valueTotal: parseFloat(valueTotal),
         date: new Date().toISOString().split("T")[0],
         type: "entrada", // Este é um novo produto, então é uma entrada no histórico
@@ -284,10 +293,10 @@ const ProductRegistration = () => {
             <Input
               text="Valor Unitário:"
               name="valueU"
-              type="number"
+              type="text" // Altere o tipo para "text"
               customClass="double"
               placeholder="R$ 00,00"
-              step="0.00"
+              pattern="\d+(\.\d{1,2})?" // Adicione o padrão para aceitar valores decimais
               value={valueUnit}
               handleOnChange={handleValueUnitChange}
             />
