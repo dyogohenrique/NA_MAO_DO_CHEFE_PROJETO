@@ -4,6 +4,8 @@ import style from "./Header.module.css";
 
 import { Link } from "react-router-dom";
 
+// import logo from "../assets/logo.svg"
+
 
 
 const Header = () => {
@@ -19,6 +21,7 @@ const Header = () => {
         <div className={style.containerLogo}>
           <p>NA MÃO DO CHEFE</p>
           <div className={style.logo}>
+            <img src="/logo.svg" alt="Logo"  height={50}/>
           </div>
         </div>
       </Link>
