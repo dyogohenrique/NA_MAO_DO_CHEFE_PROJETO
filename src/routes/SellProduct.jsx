@@ -2,11 +2,16 @@ import { useState, useEffect } from "react";
 import Input from "../components/form/Input";
 import Button from "../components/form/Button";
 import SelectInput from "../components/form/SelectInput";
-import style from "./SellProduct.module.css";
 import ProductOfList from "../components/ProductOfList";
+import ConfirmationModal from "../components/ConfirmationModal";
+import ErrorMessage from "../components/ErrorMessage";
+import style from "./SellProduct.module.css";
 import { api } from "../lib/axios";
 
 const SellProduct = () => {
+  const [errorMessage, setErrorMessage] = useState("");
+  const [showConfirmationModal, setShowConfirmationModal] = useState(false);
+  const [recipientName, setRecipientName] = useState("");
   const [sellProducts, setSellProducts] = useState([]);
   const [productName, setProductName] = useState(null);
   const [amount, setAmount] = useState(0);
@@ -43,15 +48,21 @@ const SellProduct = () => {
 
   const handleProductChange = (selectedOption) => {
     setProductName(selectedOption.value);
+    setErrorMessage(""); // Limpa a mensagem de erro ao escolher um novo produto
   };
 
   const addProductToSell = () => {
+    if (!productName || amount <= 0) {
+      setErrorMessage("Preencha todos os campos antes de adicionar o produto.");
+      return;
+    }
+
     const existingProduct = sellProducts.find(
       (p) => p.productName === productName
     );
 
     if (existingProduct) {
-      console.error("Este produto já está na lista!");
+      setErrorMessage("Este produto já está na lista!");
       return;
     }
 
@@ -84,6 +95,8 @@ const SellProduct = () => {
 
       setAmount(0);
     }
+
+    setErrorMessage(""); // Limpa a mensagem de erro após adicionar o produto
   };
 
   const handleEdit = (product) => {
@@ -103,7 +116,7 @@ const SellProduct = () => {
     setSellProducts([]);
   };
 
-  const handleSell = async () => {
+  const handleSell = async (recipientName) => {
     try {
       // Validar se a venda é possível
       for (const product of sellProducts) {
@@ -134,7 +147,7 @@ const SellProduct = () => {
           };
 
           // Enviar uma solicitação PUT para a API para atualizar o produto
-          await api.put(`/products/${productId}`, updatedProduct);
+          await api.patch(`/products/${productId}`, updatedProduct);
         })
       );
 
@@ -151,6 +164,7 @@ const SellProduct = () => {
         })),
         totalValue,
         date: new Date().toISOString().split("T")[0], // Data atual no formato YYYY-MM-DD
+        recipientName, // Adiciona o nome do destinatário
       };
 
       // Adicionar lógica para enviar a venda à API (por exemplo, POST para /sales)
@@ -171,11 +185,32 @@ const SellProduct = () => {
       });
 
       // Limpar a lista de vendas após a venda ser concluída
+      setShowConfirmationModal(true);
       setSellProducts([]);
     } catch (error) {
       console.error("Erro ao vender produtos:", error);
       // Adicionar lógica de tratamento, como exibir uma mensagem de erro
     }
+  };
+
+  const handleSellConfirmation = () => {
+    if (sellProducts.length === 0) {
+      setErrorMessage(
+        "A lista de vendas está vazia. Adicione produtos antes de vender."
+      );
+    } else {
+      setErrorMessage(""); // Limpa a mensagem de erro
+      setShowConfirmationModal(true);
+    }
+  };
+  const handleSellConfirmed = () => {
+    setShowConfirmationModal(false);
+    handleSell(recipientName);
+  };
+
+  const handleSellCancelled = () => {
+    setShowConfirmationModal(false);
+    // Lógica adicional ao cancelar a venda (opcional)
   };
 
   const handleSubmit = (e) => {
@@ -185,7 +220,14 @@ const SellProduct = () => {
 
   return (
     <div className={style.container}>
+      {showConfirmationModal && (
+        <ConfirmationModal
+          onConfirm={handleSellConfirmed}
+          onCancel={handleSellCancelled}
+        />
+      )}
       <h1>Venda de produto</h1>
+      {errorMessage && <ErrorMessage message={errorMessage} />}
       <div className={style.containerContent}>
         <form onSubmit={handleSubmit} className={style.form}>
           <SelectInput
@@ -245,7 +287,7 @@ const SellProduct = () => {
             <Button
               text="Vender"
               name="btnSVender"
-              handleOnchange={handleSell}
+              handleOnchange={handleSellConfirmation}
             />
           </div>
         </div>

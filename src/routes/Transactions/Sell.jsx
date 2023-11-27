@@ -26,8 +26,6 @@ const Sell = () => {
     fetchAllData();
   }, []);
 
-
-
   return (
     <div>
       <h1>Tabela de vendas</h1>
@@ -47,15 +45,17 @@ const Sell = () => {
                 <td>{sale.id}</td>
                 <td>
                   {products &&
-                  sale.products.map((product, index) => {
-                    const ProductDetail = products.find((p) => p.id === product.productId)
-                    return(
-                      <span key={product.index}>
-                        {ProductDetail?.productName}
-                        {index < sale.products.length - 1 && ", "}
-                      </span>
-                    )
-                  })}
+                    sale.products.map((product, index) => {
+                      const ProductDetail = products.find(
+                        (p) => p.id === product.productId
+                      );
+                      return (
+                        <span key={product.index}>
+                          {ProductDetail?.productName} ({product.quantity}{" "}
+                          unidades) {index < sale.products.length - 1 && ", "}
+                        </span>
+                      );
+                    })}
                 </td>
                 <td>R$ {sale.totalValue}</td>
                 <td>{sale.date}</td>

@@ -90,8 +90,6 @@ const ProductRegistration = () => {
     return daysToExpiration;
   };
 
-
-
   const handleDateFabricationChange = (e) => {
     const selectedDate = e.target.value;
     setDateFabrication(selectedDate);
@@ -137,7 +135,7 @@ const ProductRegistration = () => {
   }, [dateFabrication, dateValidation]);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
 
     const existingProduct = products.find(
       (product) => product.productName === productName
@@ -151,7 +149,7 @@ const ProductRegistration = () => {
         valueTotal: existingProduct.valueTotal + parseFloat(valueTotal),
       };
 
-      api.put(`/products/${existingProduct.id}`, updatedProduct);
+      api.patch(`/products/${existingProduct.id}`, updatedProduct);
 
       // Adicione um registro no histórico
       const historyEntry = {
@@ -198,12 +196,13 @@ const ProductRegistration = () => {
     <div className={style.container}>
       <h1>Cadastro de Produtos</h1>
 
-      <datalist id="products">
-        {products &&
-          products.map((product) => (
+      {products && products.length > 0 && (
+        <datalist id="products">
+          {products.map((product) => (
             <option key={product.id} value={product.productName}></option>
           ))}
-      </datalist>
+        </datalist>
+      )}
 
       <div className={style.formContainer}>
         <form onSubmit={handleSubmit} className={style.form}>

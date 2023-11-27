@@ -1,0 +1,63 @@
+.invoice {
+  font-family: Arial, sans-serif;
+  width: 80%;
+  margin: auto;
+  border: 1px solid #000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+@media print {
+  .invoice {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+.invoice h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.invoice-number {
+  font-size: 18px;
+}
+
+.invoice-date {
+  font-size: 14px;
+  color: #666;
+}
+
+.invoice-recipient {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.invoice-products {
+  margin-top: 20px;
+}
+
+.product-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.product-name {
+  flex: 1;
+}
+
+.product-quantity,
+.product-value {
+  margin-left: 20px;
+}
+
+.invoice-total {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.assinatura {
+  text-align: center;
+  border-top: 2px solid black;
+}

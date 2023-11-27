@@ -2,91 +2,660 @@
   "products": [
     {
       "productName": "Arroz",
-      "amount": 70,
-      "valueTotal": 600,
+      "dateFabrication": "2023-11-15",
+      "dateValidation": "2024-01-05",
+      "amount": 27,
+      "valueUnit": 150,
+      "valueTotal": 450,
+      "perishable": "sim",
       "id": 1
     },
     {
       "productName": "Feijão",
-      "amount": 90,
-      "valueTotal": 300,
+      "dateFabrication": "2023-11-22",
+      "dateValidation": "2024-02-23",
+      "amount": 379,
+      "valueUnit": 20,
+      "valueTotal": 600,
+      "perishable": "sim",
       "id": 2
     },
     {
-      "productName": "Trigo",
-      "dateFabrication": "2023-11-15",
-      "dateValidation": "2024-01-31",
-      "amount": 100,
-      "valueUnit": 15,
-      "valueTotal": 1750,
+      "productName": "Sabonete",
+      "dateFabrication": "2023-11-21",
+      "dateValidation": "2024-10-24",
+      "amount": 145,
+      "valueUnit": 5,
+      "valueTotal": 50,
       "perishable": "não",
       "id": 3
     },
     {
-      "productName": "Sal",
-      "amount": 480,
-      "valueTotal": 200,
+      "productName": "Desodorante",
+      "dateFabrication": "2023-11-08",
+      "dateValidation": "2024-10-25",
+      "amount": 194,
+      "valueUnit": 24,
+      "valueTotal": 120,
+      "perishable": "não",
       "id": 4
+    },
+    {
+      "productName": "Shampoo",
+      "dateFabrication": "2023-08-23",
+      "dateValidation": "2024-03-22",
+      "amount": 130,
+      "valueUnit": 75,
+      "valueTotal": 1500,
+      "perishable": "não",
+      "id": 5
+    },
+    {
+      "productName": "Condicionador",
+      "dateFabrication": "2023-11-22",
+      "dateValidation": "2024-02-23",
+      "amount": 170,
+      "valueUnit": 45,
+      "valueTotal": 1350,
+      "perishable": "não",
+      "id": 6
+    },
+    {
+      "productName": "Macarrão",
+      "dateFabrication": "2023-11-23",
+      "dateValidation": "2024-02-23",
+      "amount": 49,
+      "valueUnit": 15,
+      "valueTotal": 15,
+      "perishable": "não",
+      "id": 7
     }
   ],
   "sales": [
     {
       "products": [
         {
+          "productId": 5,
+          "quantity": "30"
+        },
+        {
+          "productId": 6,
+          "quantity": "30"
+        },
+        {
           "productId": 4,
-          "quantity": "100"
+          "quantity": "10"
         }
       ],
-      "totalValue": 1000,
-      "date": "2023-11-26",
+      "totalValue": 3840,
+      "date": "2023-11-27",
+      "recipientName": "Dyogo Henrique",
       "id": 1
+    },
+    {
+      "products": [
+        {
+          "productId": 7,
+          "quantity": "1"
+        }
+      ],
+      "totalValue": 15,
+      "date": "2023-11-27",
+      "recipientName": "Henrique",
+      "id": 2
+    },
+    {
+      "products": [
+        {
+          "productId": 4,
+          "quantity": "1"
+        }
+      ],
+      "totalValue": 24,
+      "date": "2023-11-27",
+      "recipientName": "Abla",
+      "id": 3
+    },
+    {
+      "products": [
+        {
+          "productId": 5,
+          "quantity": "2"
+        },
+        {
+          "productId": 3,
+          "quantity": "30"
+        },
+        {
+          "productId": 1,
+          "quantity": "3"
+        }
+      ],
+      "totalValue": 750,
+      "date": "2023-11-27",
+      "recipientName": "Ola",
+      "id": 4
+    },
+    {
+      "products": [
+        {
+          "productId": 2,
+          "quantity": "30"
+        },
+        {
+          "productId": 5,
+          "quantity": "15"
+        }
+      ],
+      "totalValue": 1725,
+      "date": "2023-11-27",
+      "recipientName": "Lol",
+      "id": 5
+    },
+    {
+      "products": [
+        {
+          "productId": 3,
+          "quantity": "5"
+        },
+        {
+          "productId": 5,
+          "quantity": "3"
+        }
+      ],
+      "totalValue": 250,
+      "date": "2023-11-27",
+      "recipientName": "LOL",
+      "id": 6
+    },
+    {
+      "products": [
+        {
+          "productId": 3,
+          "quantity": "10"
+        }
+      ],
+      "totalValue": 50,
+      "date": "2023-11-27",
+      "recipientName": "Lol",
+      "id": 7
+    },
+    {
+      "products": [
+        {
+          "productId": 3,
+          "quantity": "10"
+        }
+      ],
+      "totalValue": 50,
+      "date": "2023-11-27",
+      "recipientName": "POl",
+      "id": 8
+    },
+    {
+      "products": [
+        {
+          "productId": 3,
+          "quantity": "10"
+        }
+      ],
+      "totalValue": 50,
+      "date": "2023-11-27",
+      "recipientName": "MONS",
+      "id": 9
+    },
+    {
+      "products": [
+        {
+          "productId": 4,
+          "quantity": "20"
+        },
+        {
+          "productId": 2,
+          "quantity": "30"
+        }
+      ],
+      "totalValue": 1080,
+      "date": "2023-11-27",
+      "recipientName": "Paola",
+      "id": 10
+    },
+    {
+      "products": [
+        {
+          "productId": 4,
+          "quantity": "20"
+        },
+        {
+          "productId": 3,
+          "quantity": "10"
+        }
+      ],
+      "totalValue": 530,
+      "date": "2023-11-27",
+      "recipientName": "Pato",
+      "id": 11
+    },
+    {
+      "products": [
+        {
+          "productId": 4,
+          "quantity": "20"
+        },
+        {
+          "productId": 3,
+          "quantity": "10"
+        }
+      ],
+      "totalValue": 530,
+      "date": "2023-11-27",
+      "recipientName": "Pato",
+      "id": 12
+    },
+    {
+      "products": [
+        {
+          "productId": 4,
+          "quantity": "5"
+        },
+        {
+          "productId": 2,
+          "quantity": "1"
+        }
+      ],
+      "totalValue": 140,
+      "date": "2023-11-27",
+      "recipientName": "Poete",
+      "id": 13
+    },
+    {
+      "products": [
+        {
+          "productId": 4,
+          "quantity": "5"
+        },
+        {
+          "productId": 2,
+          "quantity": "1"
+        }
+      ],
+      "totalValue": 140,
+      "date": "2023-11-27",
+      "recipientName": "Porta",
+      "id": 14
+    },
+    {
+      "products": [
+        {
+          "productId": 2,
+          "quantity": "30"
+        },
+        {
+          "productId": 5,
+          "quantity": "20"
+        }
+      ],
+      "totalValue": 2100,
+      "date": "2023-11-27",
+      "recipientName": "20",
+      "id": 15
+    },
+    {
+      "products": [
+        {
+          "productId": 2,
+          "quantity": "30"
+        },
+        {
+          "productId": 5,
+          "quantity": "20"
+        }
+      ],
+      "totalValue": 2100,
+      "date": "2023-11-27",
+      "recipientName": "a",
+      "id": 16
+    },
+    {
+      "products": [
+        {
+          "productId": 2,
+          "quantity": "30"
+        }
+      ],
+      "totalValue": 600,
+      "date": "2023-11-27",
+      "recipientName": "awef",
+      "id": 17
+    },
+    {
+      "products": [
+        {
+          "productId": 2,
+          "quantity": "30"
+        }
+      ],
+      "totalValue": 600,
+      "date": "2023-11-27",
+      "recipientName": "qsa",
+      "id": 18
+    },
+    {
+      "products": [
+        {
+          "productId": 2,
+          "quantity": "30"
+        }
+      ],
+      "totalValue": 600,
+      "date": "2023-11-27",
+      "recipientName": "asdf",
+      "id": 19
+    },
+    {
+      "products": [
+        {
+          "productId": 2,
+          "quantity": "30"
+        }
+      ],
+      "totalValue": 600,
+      "date": "2023-11-27",
+      "recipientName": "qwasd",
+      "id": 20
     }
   ],
   "history": [
     {
       "productId": 1,
-      "quantity": 100,
-      "valueUnit": 20,
-      "valueTotal": 2000,
-      "date": "2023-11-26",
+      "quantity": 30,
+      "valueUnit": 150,
+      "valueTotal": 4500,
+      "date": "2023-11-27",
       "type": "entrada",
       "id": 1
     },
     {
       "productId": 2,
-      "quantity": 100,
-      "valueUnit": 30,
-      "valueTotal": 3000,
-      "date": "2023-11-26",
+      "quantity": 500,
+      "valueUnit": 20,
+      "valueTotal": 10000,
+      "date": "2023-11-27",
       "type": "entrada",
       "id": 2
     },
     {
       "productId": 3,
-      "quantity": 50,
-      "valueUnit": 15,
-      "valueTotal": 750,
-      "date": "2023-11-26",
+      "quantity": 200,
+      "valueUnit": 5,
+      "valueTotal": 1000,
+      "date": "2023-11-27",
       "type": "entrada",
       "id": 3
     },
     {
       "productId": 4,
-      "quantity": 500,
-      "valueUnit": 10,
-      "valueTotal": 5000,
-      "date": "2023-11-26",
+      "quantity": 250,
+      "valueUnit": 24,
+      "valueTotal": 6000,
+      "date": "2023-11-27",
       "type": "entrada",
       "id": 4
     },
     {
-      "productId": 3,
-      "quantity": 50,
-      "valueUnit": 20,
-      "valueTotal": 1000,
-      "date": "2023-11-26",
+      "productId": 5,
+      "quantity": 200,
+      "valueUnit": 75,
+      "valueTotal": 15000,
+      "date": "2023-11-27",
       "type": "entrada",
       "id": 5
+    },
+    {
+      "productId": 6,
+      "quantity": 200,
+      "valueUnit": 45,
+      "valueTotal": 9000,
+      "date": "2023-11-27",
+      "type": "entrada",
+      "id": 6
+    },
+    {
+      "productId": 7,
+      "quantity": 50,
+      "valueUnit": 15,
+      "valueTotal": 750,
+      "date": "2023-11-27",
+      "type": "entrada",
+      "id": 7
+    },
+    {
+      "saleId": 1,
+      "date": "2023-11-27",
+      "type": "saida",
+      "products": [
+        {
+          "productId": 5,
+          "quantity": "30",
+          "valueUnit": 75,
+          "valueTotal": 2250
+        },
+        {
+          "productId": 6,
+          "quantity": "30",
+          "valueUnit": 45,
+          "valueTotal": 1350
+        },
+        {
+          "productId": 4,
+          "quantity": "10",
+          "valueUnit": 24,
+          "valueTotal": 240
+        }
+      ],
+      "id": 8
+    },
+    {
+      "saleId": 2,
+      "date": "2023-11-27",
+      "type": "saida",
+      "products": [
+        {
+          "productId": 7,
+          "quantity": "1",
+          "valueUnit": 15,
+          "valueTotal": 15
+        }
+      ],
+      "id": 9
+    },
+    {
+      "saleId": 3,
+      "date": "2023-11-27",
+      "type": "saida",
+      "products": [
+        {
+          "productId": 4,
+          "quantity": "1",
+          "valueUnit": 24,
+          "valueTotal": 24
+        }
+      ],
+      "id": 10
+    },
+    {
+      "saleId": 4,
+      "date": "2023-11-27",
+      "type": "saida",
+      "products": [
+        {
+          "productId": 5,
+          "quantity": "2",
+          "valueUnit": 75,
+          "valueTotal": 150
+        },
+        {
+          "productId": 3,
+          "quantity": "30",
+          "valueUnit": 5,
+          "valueTotal": 150
+        },
+        {
+          "productId": 1,
+          "quantity": "3",
+          "valueUnit": 150,
+          "valueTotal": 450
+        }
+      ],
+      "id": 11
+    },
+    {
+      "saleId": 5,
+      "date": "2023-11-27",
+      "type": "saida",
+      "products": [
+        {
+          "productId": 2,
+          "quantity": "30",
+          "valueUnit": 20,
+          "valueTotal": 600
+        },
+        {
+          "productId": 5,
+          "quantity": "15",
+          "valueUnit": 75,
+          "valueTotal": 1125
+        }
+      ],
+      "id": 12
+    },
+    {
+      "saleId": 6,
+      "date": "2023-11-27",
+      "type": "saida",
+      "products": [
+        {
+          "productId": 3,
+          "quantity": "5",
+          "valueUnit": 5,
+          "valueTotal": 25
+        },
+        {
+          "productId": 5,
+          "quantity": "3",
+          "valueUnit": 75,
+          "valueTotal": 225
+        }
+      ],
+      "id": 13
+    },
+    {
+      "saleId": 9,
+      "date": "2023-11-27",
+      "type": "saida",
+      "products": [
+        {
+          "productId": 3,
+          "quantity": "10",
+          "valueUnit": 5,
+          "valueTotal": 50
+        }
+      ],
+      "id": 14
+    },
+    {
+      "saleId": 10,
+      "date": "2023-11-27",
+      "type": "saida",
+      "products": [
+        {
+          "productId": 4,
+          "quantity": "20",
+          "valueUnit": 24,
+          "valueTotal": 480
+        },
+        {
+          "productId": 2,
+          "quantity": "30",
+          "valueUnit": 20,
+          "valueTotal": 600
+        }
+      ],
+      "id": 15
+    },
+    {
+      "saleId": 12,
+      "date": "2023-11-27",
+      "type": "saida",
+      "products": [
+        {
+          "productId": 4,
+          "quantity": "20",
+          "valueUnit": 24,
+          "valueTotal": 480
+        },
+        {
+          "productId": 3,
+          "quantity": "10",
+          "valueUnit": 5,
+          "valueTotal": 50
+        }
+      ],
+      "id": 16
+    },
+    {
+      "saleId": 14,
+      "date": "2023-11-27",
+      "type": "saida",
+      "products": [
+        {
+          "productId": 4,
+          "quantity": "5",
+          "valueUnit": 24,
+          "valueTotal": 120
+        },
+        {
+          "productId": 2,
+          "quantity": "1",
+          "valueUnit": 20,
+          "valueTotal": 20
+        }
+      ],
+      "id": 17
+    },
+    {
+      "saleId": 16,
+      "date": "2023-11-27",
+      "type": "saida",
+      "products": [
+        {
+          "productId": 2,
+          "quantity": "30",
+          "valueUnit": 20,
+          "valueTotal": 600
+        },
+        {
+          "productId": 5,
+          "quantity": "20",
+          "valueUnit": 75,
+          "valueTotal": 1500
+        }
+      ],
+      "id": 18
+    },
+    {
+      "saleId": 20,
+      "date": "2023-11-27",
+      "type": "saida",
+      "products": [
+        {
+          "productId": 2,
+          "quantity": "30",
+          "valueUnit": 20,
+          "valueTotal": 600
+        }
+      ],
+      "id": 19
     }
   ]
 }
