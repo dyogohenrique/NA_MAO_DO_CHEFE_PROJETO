@@ -6,9 +6,12 @@ import style from "./ProductRegistration.module.css";
 import Input from "../components/form/Input";
 import InputRadio from "../components/form/InputRadio";
 import Button from "../components/form/Button";
+import ErrorMessage from "../components/ErrorMessage";
 
 const ProductRegistration = () => {
+  const [errorMessage, setErrorMessage] = useState("");
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
     api
       .get("/products")
@@ -54,7 +57,15 @@ const ProductRegistration = () => {
         dateFabrication,
         dateValidation
       );
+
       setDaysToExpiration(daysToExpiration);
+
+      // Exibe um aviso se o produto está prestes a vencer (10 dias antes)
+      if (daysToExpiration <= 10 && daysToExpiration > 0) {
+        setErrorMessage("Atenção: Este produto está prestes a vencer.");
+      } else {
+        setErrorMessage(""); // Limpa a mensagem de aviso
+      }
     }
   };
 
@@ -69,13 +80,13 @@ const ProductRegistration = () => {
 
     // Verifica se as datas são válidas
     if (isNaN(fabrication.getTime()) || isNaN(validation.getTime())) {
-      console.error("Datas inválidas.");
+      setErrorMessage("Datas inválidas.");
       return 0;
     }
 
     // Verifica se a data de fabricação é anterior à data de validade
     if (fabrication > validation) {
-      console.error(
+      setErrorMessage(
         "A data de fabricação deve ser anterior à data de validade."
       );
       return 0;
@@ -92,12 +103,34 @@ const ProductRegistration = () => {
 
   const handleDateFabricationChange = (e) => {
     const selectedDate = e.target.value;
+    const today = new Date();
+
+    if (new Date(selectedDate) > today) {
+      setErrorMessage(
+        "A data de fabricação não pode ser posterior à data de hoje."
+      );
+      return;
+    }
+
+    setErrorMessage(""); // Limpa a mensagem de erro se a data for válida
     setDateFabrication(selectedDate);
     updateDaysToExpiration();
   };
 
   const handleDateValidationChange = (e) => {
     const selectedDate = e.target.value;
+
+    const today = new Date();
+
+    if (new Date(selectedDate) < today) {
+      setErrorMessage(
+        "A data de validade não pode ser anterior à data de hoje."
+      );
+      return;
+    }
+
+    setErrorMessage("");
+
     setDateValidation(selectedDate);
     updateDaysToExpiration();
   };

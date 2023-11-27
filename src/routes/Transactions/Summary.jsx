@@ -94,15 +94,15 @@ const Summary = () => {
   
 
  
-  // useEffect(() => {
-  //   const storedPieChartData = localStorage.getItem('pieChartData');
-  //   const storedPieChartLabels = localStorage.getItem('pieChartLabels');
+  useEffect(() => {
+    const storedPieChartData = localStorage.getItem('pieChartData');
+    const storedPieChartLabels = localStorage.getItem('pieChartLabels');
   
-  //   if (storedPieChartData && storedPieChartLabels) {
-  //     setPieChartData(JSON.parse(storedPieChartData));
-  //     setPieChartLabel(JSON.parse(storedPieChartLabels));
-  //   }
-  // }, [sales]);
+    if (storedPieChartData && storedPieChartLabels) {
+      setPieChartData(JSON.parse(storedPieChartData));
+      setPieChartLabel(JSON.parse(storedPieChartLabels));
+    }
+  }, [sales]);
 
   return (
     <div className="container_summary">
