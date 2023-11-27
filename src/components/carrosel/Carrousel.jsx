@@ -2,6 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Carrousel.css";
+import { Link } from "react-router-dom";
 
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
@@ -36,9 +37,9 @@ const Carrousel = () => {
     slidesToShow: 3,
     focusOnSelect: true,
     slidesToScroll: 1,
-    // autoplay: true,
-    // speed: 500,
-    // autoplaySpeed: 5000,
+    autoplay: true,
+    speed: 500,
+    autoplaySpeed: 5000,
     cssEase: "linear",
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />
@@ -47,34 +48,46 @@ const Carrousel = () => {
   return (
     <div className="carousel-container">
       <Slider {...settings}>
-        <div className="carousel-card">
-          <div className="cardContainer">QUEM SOMOS?</div>
-        </div>
-        <div className="carousel-card">
-          <div className="cardContainer">O QUE PODEMOS FAZER POR VOCÊ?</div>
-        </div>
-        <div className="carousel-card">
-          <div className="cardContainer">
-            POR QUAL RAZÃO VOCÊ DEVE NOS PROCURAR?
+        <Link to="QuemSomo">
+          <div className="carousel-card">
+            <div className="cardContainer">QUEM SOMOS?</div>
           </div>
-        </div>
-        <div className="carousel-card">
-          <div className="cardContainer">
-            TENHA TODAS AS INFORMAÇÕES SOBRE SUA MERCADORIA EM FORMA DIGITAL
+        </Link>
+        <Link to="FazerPorVoce">
+          <div className="carousel-card">
+            <div className="cardContainer">O QUE PODEMOS FAZER POR VOCÊ?</div>
           </div>
-        </div>
-        <div className="carousel-card">
-          <div className="cardContainer">
-            OBTENHA RELATÓRIOS DE FATURAMENTO, ESTOQUE E VALIDADE DOS SEUS
-            PRODUTOS
+        </Link>
+        <Link to="DeveProcurar">
+          <div className="carousel-card">
+            <div className="cardContainer">
+              POR QUAL RAZÃO VOCÊ DEVE NOS PROCURAR?
+            </div>
           </div>
-        </div>
-        <div className="carousel-card">
-          <div className="cardContainer">
-            DESTAQUE-SE NO MERCADO UTILIZANDO NOSSA FERRAMENTA QUE PROMETE
-            ORGANIZAR OS SEUS CADASTROS
+        </Link>
+        <Link>
+          <div className="carousel-card">
+            <div className="cardContainer">
+              TENHA TODAS AS INFORMAÇÕES SOBRE SUA MERCADORIA EM FORMA DIGITAL
+            </div>
           </div>
-        </div>
+        </Link>
+        <Link to="transactions">
+          <div className="carousel-card">
+            <div className="cardContainer">
+              OBTENHA RELATÓRIOS DE FATURAMENTO, ESTOQUE E VALIDADE DOS SEUS
+              PRODUTOS
+            </div>
+          </div>
+        </Link>
+        <Link to="product_registration">
+          <div className="carousel-card">
+            <div className="cardContainer">
+              DESTAQUE-SE NO MERCADO UTILIZANDO NOSSA FERRAMENTA QUE PROMETE
+              ORGANIZAR OS SEUS CADASTROS
+            </div>
+          </div>
+        </Link>
       </Slider>
       
     </div>

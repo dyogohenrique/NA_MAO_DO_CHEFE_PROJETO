@@ -1,0 +1,23 @@
+.containerLearn {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    font-size: 2rem;
+}
+
+.headLearn {
+    background-color: var(--primary-color);
+    color: #fff;
+
+    text-align: center;
+
+    margin-top: 3rem;
+    padding: 1rem;
+}
+
+.contentLearn {
+    margin-top: 1rem;
+    text-align: justify;
+    padding: 1rem;
+}

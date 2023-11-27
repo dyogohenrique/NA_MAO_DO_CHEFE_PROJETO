@@ -69,6 +69,16 @@
       "valueTotal": 15,
       "perishable": "não",
       "id": 7
+    },
+    {
+      "productName": "Coca Cola",
+      "dateFabrication": "2023-11-22",
+      "dateValidation": "2024-02-02",
+      "amount": 50,
+      "valueUnit": 10,
+      "valueTotal": 500,
+      "perishable": "sim",
+      "id": 8
     }
   ],
   "sales": [
@@ -656,6 +666,15 @@
         }
       ],
       "id": 19
+    },
+    {
+      "productId": 8,
+      "quantity": 50,
+      "valueUnit": 10,
+      "valueTotal": 500,
+      "date": "2023-11-27",
+      "type": "entrada",
+      "id": 20
     }
   ]
 }

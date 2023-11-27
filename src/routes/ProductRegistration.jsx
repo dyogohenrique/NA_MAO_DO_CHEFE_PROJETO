@@ -237,6 +237,8 @@ const ProductRegistration = () => {
         </datalist>
       )}
 
+      {errorMessage && <ErrorMessage message={errorMessage} />}
+
       <div className={style.formContainer}>
         <form onSubmit={handleSubmit} className={style.form}>
           <Input

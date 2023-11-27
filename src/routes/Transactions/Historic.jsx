@@ -5,6 +5,8 @@ const Historic = () => {
   const [products, setProducts] = useState([]);
   const [sales, setSales] = useState([]);
   const [history, setHistory] = useState([]);
+  
+  const [lastAddedProducts, setLastAddedProducts] = useState([]);
 
   useEffect(() => {
     const fetchAllData = async () => {
@@ -56,6 +58,7 @@ const Historic = () => {
       <table>
         <thead>
           <tr>
+            <th>ID</th>
             <th>Tipo</th>
             <th>Produtos</th>
             <th>Valor Total</th>
@@ -66,6 +69,7 @@ const Historic = () => {
           {history &&
             history.map((item) => (
               <tr key={item.id}>
+                <td>{item.id}</td>
                 <td>{item.type}</td>
                 <td>
                   {item.type === "entrada"

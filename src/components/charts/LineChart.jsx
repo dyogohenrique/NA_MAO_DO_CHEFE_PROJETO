@@ -14,7 +14,10 @@ const LineChart = ({ data, categories }) => {
     xaxis: {
       categories: categories, // Agora, você recebe os nomes dos produtos como categorias
     },
-  };
+    dataLabels: {
+      enabled: false, 
+    },
+    };
 
   return <ReactApexChart options={options} series={options.series} type="line" height={250} width={500} />;
 };
