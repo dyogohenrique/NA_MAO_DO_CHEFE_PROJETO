@@ -1,9 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import ReactToPrint from "react-to-print";
 import Invoice from "../../components/Invoice";
-import "./Sell.css";
 
-import React from "react";
+import "./Sell.css";
 
 import { api } from "../../lib/axios";
 
@@ -41,7 +40,7 @@ const Sell = () => {
 
   return (
     <div>
-      <h1>Tabela de vendas</h1>
+      <h1 className="titleTable">Tabela de vendas</h1>
       <table>
         <thead>
           <tr>
@@ -75,7 +74,7 @@ const Sell = () => {
                 <td>{sale.date}</td>
                 <td>
                 <ReactToPrint
-                    trigger={() => <button>Imprimir Nota Fiscal</button>}
+                    trigger={() => <button className="btn_invoice">Imprimir Nota Fiscal</button>}
                     content={() => componentRefs.current[sale.id]}
                   />
                 </td>

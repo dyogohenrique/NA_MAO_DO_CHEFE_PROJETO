@@ -293,10 +293,10 @@ const ProductRegistration = () => {
             <Input
               text="Valor Unitário:"
               name="valueU"
-              type="text" // Altere o tipo para "text"
+              type="text" 
               customClass="double"
               placeholder="R$ 00,00"
-              pattern="\d+(\.\d{1,2})?" // Adicione o padrão para aceitar valores decimais
+              pattern="\d+(\.\d{1,2})?"
               value={valueUnit}
               handleOnChange={handleValueUnitChange}
             />

@@ -17,8 +17,8 @@
 .diagram,
 .value_total,
 .table {
-    margin-bottom: 2rem;
-    border-radius: 3px;
+  margin-bottom: 2rem;
+  border-radius: 3px;
 }
 
 .diagram {
@@ -53,4 +53,16 @@
 
 .value_total p {
   font-weight: bolder;
+}
+
+@media (max-width: 769px) {
+  .diagram {
+    display: none;
+  }
+  .container_summary {
+    display: block;
+  }
+}
+
+@media (max-width: 426px) {
 }

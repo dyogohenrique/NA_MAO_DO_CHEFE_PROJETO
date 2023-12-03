@@ -1,12 +1,13 @@
 .radio {
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
     font-size: larger;
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
 }
 
 .radio>label {
-    margin-bottom: .6em;
+    margin-bottom: .6rem;
     font-weight: bold;
 }
 
@@ -15,8 +16,19 @@
 }
 
 .options {
-    margin-right: 2em;
+    margin-right: 2rem;
 }
 .options input {
-    margin-right: .3em;
+    margin-right: .3rem;
+}
+
+@media (max-width: 360px) {
+    .radio>label {
+        margin-bottom: 0rem;
+
+    }
+
+    .container_options {
+        margin: 7px;
+    }
 }

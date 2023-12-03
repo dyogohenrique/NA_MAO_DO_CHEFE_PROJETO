@@ -19,7 +19,7 @@ const Header = () => {
     <header>
       <Link to="/">
         <div className={style.containerLogo}>
-          <p>NA MÃO DO CHEFE</p>
+          <p>DoChef</p>
           <div className={style.logo}>
             <img src="/logo.svg" alt="Logo"  height={50}/>
           </div>

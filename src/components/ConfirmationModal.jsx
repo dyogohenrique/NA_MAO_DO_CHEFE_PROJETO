@@ -40,7 +40,7 @@ const ConfirmationModal = ({ onConfirm, onCancel }) => {
             Por favor, forneça o nome do destinatário.
           </p>
         )}
-        <p>A nota fiscal vai ficar salva em relatórios/histórico*</p>
+        <p>A nota fiscal vai ficar salva em relatórios na parte de vendas*</p>
       </div>
       <div className={style.btnContainer}>
         <Button text="Não" customClass="danger" handleOnchange={onCancel} />

@@ -5,9 +5,10 @@
 
 .containerContent {
   display: flex;
-
+  flex-wrap: wrap;
+  
   gap: 4rem;
-
+  
   margin-top: 1.5rem;
 }
 
@@ -17,6 +18,7 @@
 
 .input_container {
   display: flex;
+  flex-wrap: wrap;
   gap: 3em;
   margin-bottom: 2em;
 }
@@ -88,4 +90,32 @@
 
 .modal .btnContainer {
   justify-content: space-evenly;
+}
+
+
+@media (max-width: 769px) and (min-width: 427px) {
+  .container {
+    width: 97vw;
+    margin: 1rem;
+  }
+
+  .cardList {
+
+
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 426px) {
+  .input_container {
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .form {
+    width: 100%;
+  }
+  .cardList {
+    width: 100%;
+  }
 }

@@ -8,7 +8,7 @@
 
 .slick-slide > div {
   margin: 0 15px;
-  box-sizing: border-box; /* Certifique-se de que as margens não afetam a largura total do slide */
+  box-sizing: border-box;  
   
 }
 
@@ -21,15 +21,15 @@
 }
 
 .slick-slide:not(.slick-center) {
-  filter: opacity(.9); /* Ajuste o valor do desfoque conforme necessário */
-  z-index: 1; /* Certifica-se de que a camada de blur fica sobre o conteúdo do card */
+  filter: opacity(.9);
+  z-index: 1;
 }
 
 .cardContainer {
   min-height: 45vh;
   
   padding: 10px;
-
+  
   text-align: center;
   font-weight: bold;
   
@@ -41,7 +41,8 @@
 .slick-center .carousel-card {
   transform: scale(1.1);
   border-radius: 10px;
-  z-index: 2; /* Certifica-se de que a camada de blur fica sobre o conteúdo do card */
+  box-shadow: 0px 0px 5px 0px #0000008a;
+  z-index: 2;
   
 }
 
@@ -50,10 +51,28 @@
   content: "";
 }
 
+
 .slick-next {
   right: -26px;
 }
 
 .slick-prev {
   left: -70px;
+}
+
+@media (max-width:1024px)  and (min-width: 769px) {
+  .carousel-container {
+    max-width: 80%;
+  }
+}
+@media (max-width:768px)  and (min-width: 427px) {
+  .carousel-container {
+    max-width: 80%;
+  }
+}
+
+@media(max-width:426px) {
+  .carousel-container {
+    display: none;
+  }
 }

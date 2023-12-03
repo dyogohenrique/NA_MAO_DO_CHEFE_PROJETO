@@ -167,14 +167,14 @@ const Summary = () => {
     <div className="container_summary">
       <div className="content_left">
         <div>
-          <h2>Relatório de Vendas</h2>
           <div className="diagram">
+          <h2>Relatório de Vendas</h2>
             <LineChart data={lineChartData} categories={lineChartLabel} />
           </div>
         </div>
         <div>
-          <h2>Relatório de Vendas sobre Produtos:</h2>
           <div className="diagram">
+          <h2>Relatório de Vendas sobre Produtos:</h2>
             <PieChart data={pieChartData} labels={pieChartLabel} />{" "}
           </div>
         </div>

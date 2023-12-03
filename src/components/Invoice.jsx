@@ -33,7 +33,7 @@ const Invoice = React.forwardRef(
 
         <div className={style.person}>
           <h3>Emitente</h3>
-          <p>NA MÃO DO CHEFE</p>
+          <p>DoChef</p>
         </div>
 
         <div className={style.person}>

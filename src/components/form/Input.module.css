@@ -1,17 +1,17 @@
 .form_control {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
 }
 
 .form_control label {
-    margin-bottom: .6em;
+    margin-bottom: .6rem;
     font-size: larger;
     font-weight: bold;
 }
 
 .form_control input {
-    padding: .7em;
+    padding: .7rem;
     font-size: larger;
     border-radius: 3px;
     border: 1px solid #000000a8;   
@@ -31,6 +31,12 @@
 .double input {
     width: 170px;
     margin-left: 15px;
+}
+
+@media (min-width: 1024px) {
+    .form_control {
+        margin-bottom: 0;
+    }
 }
 
 @media (min-width: 768px) {

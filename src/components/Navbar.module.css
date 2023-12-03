@@ -38,3 +38,53 @@ a {
 .active + .line{
   transform: scaleX(1);
 }
+
+
+.menu {
+  display: flex;
+  background-color: var(--primary-color);
+}
+
+.sandwichButton {
+  font-size: 2rem;
+  color: black;
+  cursor: pointer;
+  display: none;
+  z-index: 2;
+}
+
+.showMenu{
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .containerNavbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 70%; /* Ajuste conforme necessário */
+    background-color: var(--primary-color);
+    box-shadow: -1px 1px 10px 2px #00000061;
+    z-index: 1;
+    padding-top: 60px;
+  }
+
+  .sandwichButton {
+    display: block;
+  }
+
+  .showMenu{
+    display: block;
+  }
+  
+  .line {
+    display: none;
+  }
+}

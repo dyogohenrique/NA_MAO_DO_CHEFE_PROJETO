@@ -96,7 +96,7 @@
       "products": [
         {
           "productId": 3,
-          "quantity": "020"
+          "quantity": "20"
         },
         {
           "productId": 6,
@@ -127,22 +127,6 @@
       "date": "2023-11-27",
       "recipientName": "João",
       "id": 2
-    },
-    {
-      "products": [
-        {
-          "productId": 2,
-          "quantity": "2"
-        },
-        {
-          "productId": 1,
-          "quantity": "2"
-        }
-      ],
-      "totalValue": 59.980000000000004,
-      "date": "2023-11-27",
-      "recipientName": "Eu",
-      "id": 3
     }
   ],
   "history": [
@@ -272,26 +256,6 @@
       "date": "2023-11-27",
       "type": "entrada",
       "id": 11
-    },
-    {
-      "saleId": 3,
-      "date": "2023-11-27",
-      "type": "saida",
-      "products": [
-        {
-          "productId": 2,
-          "quantity": "2",
-          "valueUnit": 14.99,
-          "valueTotal": 29.98
-        },
-        {
-          "productId": 1,
-          "quantity": "2",
-          "valueUnit": 15,
-          "valueTotal": 30
-        }
-      ],
-      "id": 12
     }
   ]
 }

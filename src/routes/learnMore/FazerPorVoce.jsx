@@ -4,7 +4,7 @@ const FazerPorVoce = () => {
   return (
     <div className="containerLearn">
       <div className="headLearn">
-        <h1>Na Mão do Chefe</h1>
+        <h1>DoChef</h1>
         <p>O que Podemos Fazer por você?</p>
       </div>
       <div className="contentLearn">

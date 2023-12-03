@@ -6,48 +6,49 @@ import { Link } from "react-router-dom";
 
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-function SampleNextArrow({className, style, onClick}) {
-  return (
-    <div
-      className={className}
-      onClick={onClick}
-    ><IoIosArrowForward style={{ ...style, color: "black", fontSize: "70px" }} /></div>
-  );
-}
-
-function SamplePrevArrow({className, style, onClick}) {
-  return (
-    <div
-      className={className}
-      onClick={onClick}
-    ><IoIosArrowBack style={{ ...style, color: "black", fontSize: "70px"}} /></div>
-  );
-}
+const CustomArrow = ({ className, style, onClick, direction }) => (
+  <div className={className} onClick={onClick}>
+    {direction === "left" ? (
+      <IoIosArrowBack style={{ ...style, color: "black", fontSize: "70px" }} />
+    ) : (
+      <IoIosArrowForward style={{ ...style, color: "black", fontSize: "70px" }} />
+    )}
+  </div>
+);
 
 const Carrousel = () => {
-
-
+  
   const settings = {
-    className: "center",
-    useTransform: true,
     infinite: true,
     dots: true,
     centerMode: true,
-    centerPadding: "150px",
-    slidesToShow: 3,
-    focusOnSelect: true,
     slidesToScroll: 1,
-    autoplay: true,
     speed: 500,
+    slidesToShow: 3,
+    centerPadding: "150px",
+    autoplay: true,
     autoplaySpeed: 5000,
     cssEase: "linear",
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+    nextArrow: <CustomArrow direction="right" />,
+    prevArrow: <CustomArrow direction="left" />,
+    // mobileFirst: true,
+    responsive: [
+      {
+        breakpoint: 1025,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: "175px",
+        }
+      }, {
+        breakpoint: 425,
+        settings: "unslick"
+      }
+    ],
   };
 
   return (
     <div className="carousel-container">
-      <Slider {...settings}>
+      <Slider {...settings} >
         <Link to="QuemSomo">
           <div className="carousel-card">
             <div className="cardContainer">QUEM SOMOS?</div>
@@ -89,7 +90,6 @@ const Carrousel = () => {
           </div>
         </Link>
       </Slider>
-      
     </div>
   );
 };

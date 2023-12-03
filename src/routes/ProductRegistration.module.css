@@ -10,6 +10,7 @@
 .input_container {
   display: flex;
   margin-top: 2.4em;
+  flex-wrap: wrap;
 }
 
 .container1 {
@@ -21,3 +22,58 @@
   display: flex;
   justify-content: center;
 }
+
+@media (max-width: 1024px) and (min-width: 770px) {
+  .input_container {
+    margin-top: 1.4rem;
+  }
+
+  .input_container input[type="Radio"] {
+    margin-top: 1.3rem;
+  }
+
+  .container1 {
+    gap: 2rem;
+  }
+
+  .addProduct {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 769px) and (min-width: 427px) {
+  .input_container {
+    margin-top: 0.5rem;
+  }
+
+  .input_container input[type="Radio"] {
+    margin-top: 1.3rem;
+  }
+
+  .container1 {
+    gap: 2rem;
+  }
+
+  .addProduct {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 426px) {
+  .input_container {
+    margin-top: 0;
+  }
+
+  .input_container input[type="Radio"] {
+    margin-top: 1.3rem;
+  }
+
+  .container1 {
+    gap: 0rem;
+  }
+
+  .addProduct {
+    margin-top: 1rem;
+  }
+}
+

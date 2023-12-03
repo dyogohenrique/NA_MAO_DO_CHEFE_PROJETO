@@ -54,7 +54,7 @@ const Historic = () => {
 
   return (
     <div>
-      <h1>Tabela de histórico</h1>
+      <h1 className="titleTable">Tabela de histórico</h1>
       <table>
         <thead>
           <tr>

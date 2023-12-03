@@ -2,7 +2,7 @@ const Procurar = () => {
   return (
     <div className="containerLearn">
       <div className="headLearn">
-        <h1>Na Mão do Chefe</h1>
+        <h1>DoChef</h1>
         <p>Por qual Razão você deve nos Procurar?</p>
       </div>
       <div className="contentLearn">

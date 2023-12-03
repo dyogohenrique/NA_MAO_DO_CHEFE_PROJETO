@@ -40,7 +40,7 @@ const Stock = () => {
 
   return (
     <div>
-      <h1>Tabela de estoque</h1>
+      <h1 className="titleTable">Tabela de estoque</h1>
       <div className="buscar">
         <Select
           isMulti
@@ -58,12 +58,12 @@ const Stock = () => {
         <table>
           <thead>
             <tr>
-              <th className="id">ID</th>
+              <th className="id hide-on-small-screen">ID</th>
               <th className="nome">Nome</th>
               <th className="qtd">Quantidade</th>
               <th className="vunit">Valor Unitário</th>
               <th className="vtotal">Valor Total</th>
-              <th className="dtcadastro">Data de Cadastro</th>
+              <th className="dtcadastro hide-on-small-screen">Data de Fabricação</th>
               <th className="dtvalidade">Data de Validade</th>
               <th className="dtvalidade">Dias para vencer</th>
             </tr>
@@ -71,12 +71,12 @@ const Stock = () => {
           <tbody>
             {filteredProducts.map((product) => (
               <tr key={product.id}>
-                <td>{product.id}</td>
+                <td className="hide-on-small-screen">{product.id}</td>
                 <td>{product.productName}</td>
                 <td>{product.amount}</td>
                 <td>R$ {product.valueUnit}</td>
                 <td>R$ {product.valueTotal}</td>
-                <td>{product.dateFabrication}</td>
+                <td className="hide-on-small-screen">{product.dateFabrication}</td>
                 <td>{product.dateValidation}</td>
                 <td>{calculateDaysToExpiration(product.dateValidation)}</td>
               </tr>

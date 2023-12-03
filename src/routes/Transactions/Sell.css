@@ -4,6 +4,25 @@
     padding: 20px 30px;
 }
 
+.titleTable {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn_invoice {
+    padding: .7rem 1rem;
+    border: none;
+    background-color: rgb(0, 115, 255);
+    color: #FFF;
+    border-radius: 2px;
+    opacity: .9;
+}
+
+.btn_invoice:hover {
+    opacity: 1;
+}
+
 table {
     border-collapse: collapse;
     width: 95%;
@@ -27,3 +46,23 @@ td {
 .esconde {
     display: none;
 }
+
+
+@media (max-width: 769px) and (min-width: 427px) {
+    table {
+       font-size: 14px;  /* Adjust font size for smaller screens */
+    }
+ }
+ 
+ @media (max-width: 426px) {
+    table {
+       font-size: 12px;  /* Further adjust font size for even smaller screens */
+    }
+    .btn_invoice {
+        font-size: 12px;
+    }
+
+    .hide-on-small-screen {
+        display: none;
+     }
+ }
